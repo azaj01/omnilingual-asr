@@ -193,6 +193,7 @@ class Wav2Vec2AsrRecipe(TrainRecipe):
                     tokenizer=context.default_tokenizer,
                     gangs=context.gangs,
                     dtype=config.trainer.mixed_precision.dtype,
+                    num_accumulate=config.trainer.grad_accumulation.num_batches,
                     storage_config=storage_config,  # type: ignore
                     task_config=task_config,  # type: ignore
                 )
